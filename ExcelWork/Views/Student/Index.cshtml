@@ -1,0 +1,72 @@
+﻿@model ExcelWork.Models.student
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Add", "Student", FormMethod.Post))
+            {
+    <div class="container">
+        <div class="form-group">
+            <label>Student ID</label>
+            @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <label>Student Name</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <label>Student Age</label>
+            @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <label>Student Department</label>
+            @Html.TextBoxFor(x => x.Department, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            function validate() {
+
+                $.ajax({
+                    type: "POST",
+
+                    url: "/Student/Index",
+                    Cache: false,
+
+                    success: function (data) {
+                        window.location = '/Student/AddList';
+                    },
+                    error: function (data) {
+                        alert("try again");
+                    }
+
+
+
+
+
+                });
+
+            }
+
+        </script>
+
+    </div>
+
+
+
+
+            }
+
+
+
+ 
+
+

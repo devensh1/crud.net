@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Download";
+}
+
+<h2>Download</h2>
+
+<button onclick="DownloadFile()">Download File</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    function DownloadFile(){
+
+        $.ajax({
+            type: "POST",
+
+            url: "/Home/Index",
+            Cache: false,
+
+            success: function (data) {
+                window.location = '/Home/Download';
+            },
+            error: function (data) {
+                alert("try again");
+            }
+
+
+
+
+
+        });
+
+    }
+
+</script>
+

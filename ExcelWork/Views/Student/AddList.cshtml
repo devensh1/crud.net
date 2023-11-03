@@ -1,0 +1,33 @@
+﻿@model List<ExcelWork.Models.student>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddList</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Studnet ID</th>
+            <th>Student Name</th>
+            <th> Studnet age</th>
+            <th> Department </th>
+        </tr>
+        @foreach(var item  in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age
+                </td>
+                <td>@item.Department</td>
+            </tr>
+            }
+    </table>
+</body>
+</html>
